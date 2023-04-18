@@ -1,0 +1,41 @@
+﻿<Window x:Class="MyHours.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyHours"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="MyHours" SizeToContent="WidthAndHeight" MinHeight="650" MinWidth="350"  Icon="/images/MyHours5.png" Visibility="Visible" ResizeMode="NoResize">
+    <Border BorderBrush="Transparent" CornerRadius="25" Background="Black" BorderThickness="10" Margin="0,5,0,0" >
+        <Border Background="Black" CornerRadius="21" Name = "MainBorder" Padding="4 4 4 4">
+
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Direction ="-90" RenderingBias ="Quality" ShadowDepth ="0" Color ="Black" />
+            </Border.Effect>
+
+            <Grid x:Name="frameWindow" HorizontalAlignment="Center" GotFocus="frameWindow_Focus" Margin="22 -6 20 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="88*"/>
+                    <RowDefinition Height="557*"/>
+                </Grid.RowDefinitions>
+
+                <Image Height="278" Margin="10,40,10,0" VerticalAlignment="Top" Source="/images/MyHours5.png" SnapsToDevicePixels="True" Grid.RowSpan="2"/>
+                <Frame x:Name="Main" Margin="0,204.667,0,10" NavigationUIVisibility="Hidden" Grid.Row="1" />
+                <Border CornerRadius="20,20,0,0" x:Name="topBar" BorderThickness="1" HorizontalAlignment="Left" Height="44" Margin="-27,-3,-28,0" VerticalAlignment="Top" Width="350" Background="#FF595959" MouseDown="topBar_MouseDown"/>
+                <Grid MouseDown="topBar_MouseDown">
+                    <Label Content="My Hours" FontFamily="Arial Rounded MT Bold" Margin="0 4 0 0" FontSize="18"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft" Margin="0 5 0 0" Grid.RowSpan="2">
+                    <Image x:Name="closeApp" HorizontalAlignment="Left" Height="31"  Margin="0 0 5 0"  VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.195,0.455" Style="{StaticResource Style.Image.closeApp}" MouseUp="closeApp_MouseUp" />
+                    <Image x:Name="minimise" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.195,0.455" Style="{StaticResource Style.Image.minimiseApp}" MouseUp="minimise_MouseDown" />
+                </StackPanel>
+
+
+            </Grid>
+        </Border>
+    </Border>
+</Window>

@@ -1,0 +1,92 @@
+﻿<Page x:Class="MyHours.Calculate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MyHours"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Calculate" Loaded="Calculate_Load">
+    <Grid Width="298" Height="316" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox x:Name="fromEntHours" HorizontalAlignment="Center" Height="60" Margin="25,40,189,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="84" UseLayoutRounding="True" FontSize="40" MaxLength="2" GotFocus="fromEntHours_Focus" PreviewKeyDown="button_PreviewKeyDown" TabIndex="0" TextChanged="moveToNext_TextChanged" Text="HH" Background="#FFF0F0F0" Foreground="LightGray" VerticalContentAlignment="Center" Padding="0" LostFocus="fromEntHours_LostFocus" FontFamily="Arial Rounded MT Bold" SelectionOpacity="0" BorderThickness="0" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Style.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="#FFFFFFB1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label Content="FROM" HorizontalAlignment="Left" Margin="25,6,0,0" VerticalAlignment="Top" Foreground="White" FontSize="22" FontFamily="Courier New" UseLayoutRounding="True" Width="244"/>
+        <TextBox x:Name="toEntHours" HorizontalAlignment="Center" Height="60" Margin="25,158,189,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="84" UseLayoutRounding="True" FontSize="40" MaxLength="2" GotFocus="toEntHours_Focus" TabIndex="2" TextChanged="moveToNext3_TextChanged" Background="#FFF0F0F0" Foreground="LightGray" Text="HH" VerticalContentAlignment="Center" Padding="0" PreviewKeyDown="button_PreviewKeyDown" LostFocus="toEntHours_LostFocus" FontFamily="Arial Rounded MT Bold" BorderThickness="0" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Style.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="#FFFFFFB1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label Content="TO" HorizontalAlignment="Center" Margin="25,124,29,0" VerticalAlignment="Top" Foreground="White" FontSize="22" FontFamily="Courier New" UseLayoutRounding="True" Width="244" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="fromEntMinutes" HorizontalAlignment="Center" Height="60" Margin="185,40,29,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="84" UseLayoutRounding="True" FontSize="40" MaxLength="2" GotFocus="fromEntMinutes_Focus" TabIndex="1" TextChanged="moveToNext2_TextChanged" Text="mm" Background="#FFF0F0F0" Foreground="LightGray" VerticalContentAlignment="Center" Padding="0" PreviewKeyDown="button_PreviewKeyDown" LostFocus="fromEntMinutes_LostFocus" FontFamily="Arial Rounded MT Bold" BorderThickness="0" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Style.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="#FFFFFFB1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <TextBox x:Name="toEntMinutes" HorizontalAlignment="Center" Height="60" Margin="185,158,29,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="84" UseLayoutRounding="True" FontSize="40" MaxLength="2" GotFocus="toEntMinutes_Focus" TabIndex="3" TextChanged="moveToNext4_TextChanged" Background="#FFF0F0F0" Foreground="LightGray" Text="mm" VerticalContentAlignment="Center" Padding="0" PreviewKeyDown="button_PreviewKeyDown" LostFocus="toEntMinutes_LostFocus" FontFamily="Arial Rounded MT Bold" BorderThickness="0" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Style.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10" />
+                        </Style>
+                    </Style.Resources>
+                    <Style.Triggers>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="Background" Value="#FFFFFFB1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
+
+
+
+        <Button x:Name="calculateBtn" Content="Calculate" HorizontalAlignment="Center" Margin="25,240,29,24" Width="244" RenderTransformOrigin="-0.335,-0.204" FontFamily="Arial Rounded MT Bold" UseLayoutRounding="True" Click="calculateBtn_Click" FontWeight="SemiBold" FontSize="22" TabIndex="4" Style="{StaticResource Style.Button.Cool}" >
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Content=":" Margin="123,28,127,0" VerticalAlignment="Top" FontSize="72" FontFamily="Courier New" Foreground="White" Height="72" FontWeight="Bold" Padding="0,0,0,-3" HorizontalAlignment="Center" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+        <Label Content=":" Margin="122,143,126,0" VerticalAlignment="Top" FontSize="72" FontFamily="Courier New" Foreground="White" Height="75" FontWeight="Bold" Padding="0,0,0,-3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+    </Grid>
+</Page>
